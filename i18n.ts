@@ -1,6 +1,6 @@
 import NextI18Next from 'next-i18next';
 
-const currentLocale = process.env.NEXT_PUBLIC_LOCALE as string;
+const currentLocale = process.env.NEXT_PUBLIC_LOCALE as string || "en";
 
 const NextI18NextInstance = new NextI18Next({
   defaultLanguage: currentLocale,

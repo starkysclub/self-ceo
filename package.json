@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
-    "build": "cross-env NEXT_PUBLIC_LOCALE=\"en\" next build && cross-env NEXT_PUBLIC_LOCALE=\"en\" next export",
+    "build": "next build && next export",
     "build-de": "cross-env NEXT_PUBLIC_LOCALE=\"de\" next build && cross-env NEXT_PUBLIC_LOCALE=\"de\" next export",
     "start": "next start"
   },
