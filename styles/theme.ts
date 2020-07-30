@@ -45,6 +45,7 @@ export interface IThemeInterface {
   };
   fonts: {
     fontBase: string;
+    fontHeadings: string;
   };
   fontWeights: {
     textLight: number;
@@ -81,6 +82,7 @@ export interface IThemeInterface {
     h4: string;
     h5: string;
   };
+  letterSpacing: string;
   flexboxgrid: {
     gridSize: number;
     gutterWidth: number;
@@ -104,9 +106,9 @@ export const theme: IThemeInterface = {
   colors: {
     white: '#FFF',
     black: '#000',
-    default: '#2F2727',
+    default: '#3C3841',
     defaultHover: '#1D1717',
-    primary: '#2F80ED',
+    primary: '#62319E',
     primaryHover: '#2F80ED',
     primaryDisabled: '#2F80ED',
     secondary: '#C7C7C7',
@@ -130,6 +132,7 @@ export const theme: IThemeInterface = {
   },
   fonts: {
     fontBase: 'Jost',
+    fontHeadings: 'CormorantGaramond',
   },
   fontWeights: {
     textLight: 300,
@@ -138,13 +141,13 @@ export const theme: IThemeInterface = {
     textBold: 700,
   },
   fontSizes: {
-    textBase: rem('14px'),
+    textBase: rem('22px'),
     textSmall: rem('11px'),
     textSubMedium: rem('15px'),
-    textMedium: rem('16px'),
+    textMedium: rem('18px'),
     textSupMedium: rem('18px'),
     textBig: rem('22px'),
-    h1: rem('70px'),
+    h1: rem('86px'),
     h2: rem('48px'),
     h3: rem('36px'),
     h4: rem('24px'),
@@ -152,19 +155,20 @@ export const theme: IThemeInterface = {
     h6: rem('12px'),
   },
   lineHeights: {
-    textBase: rem('14px'),
+    textBase: rem('33px'),
     textSmall: rem('11px'),
     textSubMedium: rem('15px'),
     textSupMedium: rem('18px'),
     textMedium: rem('16px'),
     textBig: rem('22px'),
     textSupBig: rem('24px'),
-    h1: rem('72px'),
+    h1: rem('104px'),
     h2: rem('50px'),
     h3: rem('28px'),
     h4: rem('26px'),
     h5: rem('22px'),
   },
+  letterSpacing: '0.01em',
   flexboxgrid: {
     // Defaults
     gridSize: 12, // columns

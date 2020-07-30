@@ -11,35 +11,35 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
     <Section className={className}>
       <Grid>
         <Row>
-          <Col>
+          <Col xs={12}>
             <h2>{t('features.title')}</h2>
             <p>{t('features.description')}</p>
           </Col>
         </Row>
         <Row>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <h3>{t('features.todos.title')}</h3>
             <p>{t('features.todos.description')}</p>
           </Col>
-          <Col md={6}></Col>
+          <Col xs={12} md={6}></Col>
         </Row>
         <Row>
-          <Col md={6}></Col>
-          <Col md={6}>
+          <Col xs={12} md={6}></Col>
+          <Col xs={12} md={6}>
             <h3>{t('features.goals.title')}</h3>
             <p>{t('features.goals.description')}</p>
           </Col>
         </Row>
         <Row>
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <h3>{t('features.events.title')}</h3>
             <p>{t('features.events.description')}</p>
           </Col>
-          <Col md={6}></Col>
+          <Col xs={12} md={6}></Col>
         </Row>
         <Row>
-          <Col md={6}></Col>
-          <Col md={6}>
+          <Col xs={12} md={6}></Col>
+          <Col xs={12} md={6}>
             <h3>{t('features.habbits.title')}</h3>
             <p>{t('features.habbits.description')}</p>
           </Col>

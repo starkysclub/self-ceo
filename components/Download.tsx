@@ -8,10 +8,10 @@ interface DownloadTemplateProps extends WithTranslation {}
 
 const DownloadTemplate: SC<DownloadTemplateProps> = ({ className, t }) => {
   return (
-    <Section className={className}>
+    <Section className={className} colored>
       <Grid>
         <Row>
-          <Col>
+          <Col xs={12}>
             <h2>{t('download.title')}</h2>
             <p>{t('download.description')}</p>
           </Col>

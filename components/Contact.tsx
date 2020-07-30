@@ -11,7 +11,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
     <Section className={className}>
       <Grid>
         <Row>
-          <Col>
+          <Col xs={12}>
             <h2>{t('contact.title')}</h2>
           </Col>
         </Row>

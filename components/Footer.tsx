@@ -8,16 +8,16 @@ interface FooterTemplateProps extends WithTranslation {}
 
 const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
   return (
-    <Section className={className}>
+    <Section className={className} colored>
       <Grid>
         <Row>
-          <Col md={4}>
+          <Col xs={12} md={4}>
             <h2>{t('footer.title')}</h2>
             <p>{t('footer.description')}</p>
           </Col>
-          <Col md={8}>
+          <Col xs={12} md={8}>
             <Row>
-              <Col md={4}>
+              <Col xs={12} md={4}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
@@ -31,7 +31,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col md={4}>
+              <Col xs={12} md={4}>
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
@@ -45,7 +45,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col md={4}>
+              <Col xs={12} md={4}>
                 <h4>{t('footer.download')}</h4>
               </Col>
             </Row>

@@ -22,6 +22,8 @@ const main = css`
 
     html {
         font-family: ${({ theme }) => theme.fonts.fontBase};
+        font-size: 16px;
+        color: ${({ theme }) => theme.colors.default};
     }
 `;
 

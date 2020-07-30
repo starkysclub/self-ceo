@@ -13,14 +13,12 @@ interface HompeageProps extends WithTranslation {}
 const Homepage: NextPage<HompeageProps> = () => {
   return (
     <>
-      <main>
-        <Navigation />
-        <Hero />
-        <Features />
-        <Download />
-        <Contact />
-        <Footer />
-      </main>
+      <Navigation />
+      <Hero />
+      <Features />
+      <Download />
+      <Contact />
+      <Footer />
     </>
   );
 };

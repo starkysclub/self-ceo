@@ -11,11 +11,13 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
     <Section className={className}>
       <Grid>
         <Row>
-          <Col>
+          <Col xs={12} md={5} mdOffset={1}>
             <div className="content">
               <h2>{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
             </div>
+          </Col>
+          <Col xs={12} md={5}>
             <div className="image"></div>
           </Col>
         </Row>
