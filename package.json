@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@types/react-copy-to-clipboard": "^4.3.0",
+    "formik": "^2.1.5",
     "i18next": "^19.6.3",
     "i18next-browser-languagedetector": "^5.0.0",
     "next": "latest",

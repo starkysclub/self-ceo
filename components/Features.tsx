@@ -16,28 +16,28 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
             <p>{t('features.description')}</p>
           </Col>
         </Row>
-        <Row>
+        <Row className="feature">
           <Col xs={12} md={6}>
             <h3>{t('features.todos.title')}</h3>
             <p>{t('features.todos.description')}</p>
           </Col>
           <Col xs={12} md={6}></Col>
         </Row>
-        <Row>
+        <Row className="feature">
           <Col xs={12} md={6}></Col>
           <Col xs={12} md={6}>
             <h3>{t('features.goals.title')}</h3>
             <p>{t('features.goals.description')}</p>
           </Col>
         </Row>
-        <Row>
+        <Row className="feature">
           <Col xs={12} md={6}>
             <h3>{t('features.events.title')}</h3>
             <p>{t('features.events.description')}</p>
           </Col>
           <Col xs={12} md={6}></Col>
         </Row>
-        <Row>
+        <Row className="feature">
           <Col xs={12} md={6}></Col>
           <Col xs={12} md={6}>
             <h3>{t('features.habbits.title')}</h3>
@@ -49,6 +49,10 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
   );
 };
 
-const Features = styled(FeaturesTemplate)``;
+const Features = styled(FeaturesTemplate)`
+  .feature {
+    padding: 6rem 0;
+  }
+`;
 
 export default withTranslation('common')(Features);

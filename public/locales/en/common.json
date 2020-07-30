@@ -34,7 +34,13 @@
     "description": "We are on both iOS and Android!"
   },
   "contact": {
-    "title": "Contact us"
+    "title": "Contact us",
+    "fields": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "topic": "Choose a topic",
+      "message": "Write your message"
+    }
   },
   "footer": {
     "title": "Self-CEO",
@@ -44,6 +50,7 @@
     "privacy": "Privacy Policy",
     "company": "Company",
     "menu": "Menu",
-    "download": "Download"
+    "download": "Download",
+    "copyright": "Made with love by {{0}}. © All Rights Reserved. 2020 Self-CEO "
   }
 }

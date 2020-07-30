@@ -3,6 +3,7 @@ import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../i18n';
+import { rem } from 'polished';
 
 interface FooterTemplateProps extends WithTranslation {}
 
@@ -12,22 +13,26 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
       <Grid>
         <Row>
           <Col xs={12} md={4}>
-            <h2>{t('footer.title')}</h2>
-            <p>{t('footer.description')}</p>
+            <div className="brand">
+              <div className="logo"></div>
+              <h2>{t('footer.title')}</h2>
+            </div>
+
+            <p className="description">{t('footer.description')}</p>
           </Col>
-          <Col xs={12} md={8}>
+          <Col xs={12} md={7} mdOffset={1}>
             <Row>
               <Col xs={12} md={4}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
-                    <a>{t('footer.terms')}</a>
+                    <a href="#">{t('footer.terms')}</a>
                   </li>
                   <li>
-                    <a>{t('footer.privace')}</a>
+                    <a href="#">{t('footer.privace')}</a>
                   </li>
                   <li>
-                    <a>{t('footer.company')}</a>
+                    <a href="#">{t('footer.company')}</a>
                   </li>
                 </ul>
               </Col>
@@ -51,11 +56,75 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
             </Row>
           </Col>
         </Row>
+        <Row>
+          <Col xs={12}>
+            <div className="copyright">{t('footer.copyright')}</div>
+          </Col>
+        </Row>
       </Grid>
     </Section>
   );
 };
 
-const Footer = styled(FooterTemplate)``;
+const Footer = styled(FooterTemplate)`
+  .brand {
+    display: flex;
+
+    h2 {
+      line-height: 4.5rem;
+    }
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+    background: url('/images/AppIconBig.png');
+    margin-right: 1rem;
+  }
+
+  .description {
+    color: ${({ theme }) => theme.colors.grey3};
+    font-size: ${({ theme }) => theme.fontSizes.textMedium};
+    line-height: ${({ theme }) => theme.lineHeights.textMedium};
+  }
+
+  h4 {
+    margin: 0.5rem 0;
+    padding-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin: 1rem 0;
+
+      a,
+      a:active,
+      a:visited {
+        font-family: Jost;
+        font-style: normal;
+        font-weight: normal;
+        font-size: ${rem('18px')};
+        line-height: ${rem('26px')};
+        letter-spacing: 0.5px;
+        color: ${({ theme }) => theme.colors.grey3};
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+          color: ${({ theme }) => theme.colors.primary};
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin: 4rem 0 -1rem;
+    padding: 4rem 0 0;
+    border-top: 1px solid #ede8f5;
+  }
+`;
 
 export default withTranslation('common')(Footer);
