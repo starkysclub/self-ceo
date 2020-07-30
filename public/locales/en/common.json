@@ -1,7 +1,6 @@
 {
-    "h1": "A simple example",
-    "change-locale": "Change locale",
-    "to-second-page": "To second page",
-    "error-with-status": "A {{statusCode}} error occurred on server",
-    "error-without-status": "An error occurred on the server"
+  "hero": {
+    "title": "Become the CEO of your life",
+    "description": "Self-CEO is an all-in-one life planner. It helps you organize your life on a larger scale and get more done. Plus it's really fun to use!"
   }
+}
