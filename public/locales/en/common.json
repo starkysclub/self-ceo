@@ -1,6 +1,49 @@
 {
+  "navigation": {
+    "brand": "Self-CEO",
+    "home": "Home",
+    "features": "Features",
+    "contact": "Contact"
+  },
   "hero": {
     "title": "Become the CEO of your life",
     "description": "Self-CEO is an all-in-one life planner. It helps you organize your life on a larger scale and get more done. Plus it's really fun to use!"
+  },
+  "features": {
+    "title": "Why Self-CEO?",
+    "description": "Do you want to take your life into your hands? Do you want to fulfill your potential and live a happy life? Decide exactly what you want and when you want it. Visualize it. Write it down into Self-CEO. Then act! ",
+    "todos": {
+      "title": "TO-DOs",
+      "description": "Get done all the things that will help you reach your goals. Whatever TO-DO it is, you can add a photo to each one, create notes, add buckets, or choose the exact time you want to get it done. Thanks to the intuitive drag and drop of items and swiping to mark as complete you can keep organized with no hassle."
+    },
+    "goals": {
+      "title": "Goals",
+      "description": "Set up your desired goals and look forward to them. It's maybe not the best idea to live your life just to reach the goals, but the important thing is that they make you act. You make yourself do something every day to achieve them!"
+    },
+    "events": {
+      "title": "Events",
+      "description": "Stay up to date with all the special events that await you in the next months! Personalize the events with beautiful photos from your gallery. Pick a specific date or range of dates. And of course, add a location!"
+    },
+    "habbits": {
+      "title": "Habits",
+      "description": "Self-CEO helps you build a routine of life-changing habits. Track your progress, and motivate yourself to new heights! Setting multiple reminders throughout your day and analyzing your daily, weekly and monthly progress helps you keep on track. Build chains of completed habits and perfect days as well as try to beat your best streaks!"
+    }
+  },
+  "download": {
+    "title": "Do you want to be in charge of your life?",
+    "description": "We are on both iOS and Android!"
+  },
+  "contact": {
+    "title": "Contact us"
+  },
+  "footer": {
+    "title": "Self-CEO",
+    "description": "Self-CEO is an all-in-one life planner. It helps you organize your life on a larger scale and get more done. Plus it's really fun to use!",
+    "importantLinks": "Importnat links",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "company": "Company",
+    "menu": "Menu",
+    "download": "Download"
   }
 }

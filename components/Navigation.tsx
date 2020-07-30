@@ -5,22 +5,28 @@ import { withTranslation, WithTranslation } from '../i18n';
 
 interface NavigationTemplateProps extends WithTranslation {}
 
-const NavigationTemplate: SC<NavigationTemplateProps> = ({ className }) => {
+const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
   return (
     <div className={className}>
       <Grid>
         <Row>
           <Col md={6}>
             <div>
-              <h1>Self-CEO</h1>
+              <h1>{t('navigation.brand')}</h1>
             </div>
           </Col>
           <Col md={6}>
-            <div>
-              <a href="#home">Home</a>
-              <a href="#features">Features</a>
-              <a href="#contact">Contact</a>
-            </div>
+            <ul>
+              <li>
+                <a href="#home">{t('navigation.home')}</a>
+              </li>
+              <li>
+                <a href="#features">{t('navigation.features')}</a>
+              </li>
+              <li>
+                <a href="#contact">{t('navigation.contact')}</a>
+              </li>
+            </ul>
           </Col>
         </Row>
       </Grid>

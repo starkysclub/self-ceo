@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { WithTranslation } from 'next-i18next';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
-import About from '../components/About';
+import Features from '../components/Features';
 import Download from '../components/Download';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -16,7 +16,7 @@ const Homepage: NextPage<HompeageProps> = () => {
       <main>
         <Navigation />
         <Hero />
-        <About />
+        <Features />
         <Download />
         <Contact />
         <Footer />
