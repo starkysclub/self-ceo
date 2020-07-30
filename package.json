@@ -1,0 +1,31 @@
+{
+  "name": "with-typescript-styled-components",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "cross-env NEXT_PUBLIC_LOCALE=\"en\" next build && cross-env NEXT_PUBLIC_LOCALE=\"en\" next export",
+    "build-de": "cross-env NEXT_PUBLIC_LOCALE=\"de\" next build && cross-env NEXT_PUBLIC_LOCALE=\"de\" next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "i18next": "^19.6.3",
+    "i18next-browser-languagedetector": "^5.0.0",
+    "next": "latest",
+    "next-i18next": "^5.1.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-i18next": "^11.7.0",
+    "react-intl": "^5.4.3",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "12.0.12",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
+    "@types/styled-components": "5.0.1",
+    "babel-plugin-styled-components": "^1.10.0",
+    "cross-env": "^7.0.2",
+    "typescript": "3.5.2"
+  },
+  "license": "ISC"
+}
