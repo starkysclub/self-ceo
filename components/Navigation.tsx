@@ -57,6 +57,7 @@ const Navigation = styled(NavigationTemplate)`
   }
   .navbar-nav {
     display: flex;
+    justify-content: flex-end;
     list-style-type: none;
 
     li a,

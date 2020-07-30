@@ -28,7 +28,9 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
           </Col>
         </Row>
         <Row>
-          <Col xs={12} md={6}></Col>
+          <Col xs={12} md={6}>
+            <div className="image" />
+          </Col>
           <Col xs={12} md={6}>
             <Form config={config}>
               <Input name="name" placeholder={t('contact.fields.name')} />
@@ -47,6 +49,13 @@ const Contact = styled(ContactTemplate)`
   .title {
     text-align: center;
     margin-bottom: 5rem;
+  }
+  .image {
+    width: 500px;
+    height: 440px;
+    background: url('/images/contact.png');
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 `;
 

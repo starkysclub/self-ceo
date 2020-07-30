@@ -8,6 +8,7 @@ interface SectionProps {
 const Section = styled.section<SectionProps>`
   padding: 10rem 0;
   background: ${({ theme, colored }) => (colored ? 'rgba(98, 49, 158, 0.05)' : theme.colors.white)};
+  position: relative;
 `;
 
 export default Section;

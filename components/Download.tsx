@@ -21,6 +21,8 @@ const DownloadTemplate: SC<DownloadTemplateProps> = ({ className, t }) => {
   );
 };
 
-const Download = styled(DownloadTemplate)``;
+const Download = styled(DownloadTemplate)`
+  text-align: center;
+`;
 
 export default withTranslation('common')(Download);

@@ -9,7 +9,10 @@ interface HeroTemplateProps extends WithTranslation {}
 const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
   return (
     <Section className={className}>
-      <Grid>
+      <Grid style={{ position: 'relative', minHeight: '800px' }}>
+        <div className="circle-1" />
+        <div className="circle-2" />
+        <div className="circle-3" />
         <Row>
           <Col xs={12} md={5} mdOffset={1}>
             <div className="content">
@@ -26,6 +29,60 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
   );
 };
 
-const Hero = styled(HeroTemplate)``;
+const Hero = styled(HeroTemplate)`
+  margin-bottom: -10rem;
+
+  .image {
+    width: 800px;
+    height: 824px;
+    background: url('/images/FreeiPhoneXr1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -180px;
+    right: 0;
+  }
+  .circle-1 {
+    position: absolute;
+    width: 617px;
+    height: 617px;
+    left: -105px;
+    top: -150px;
+
+    /* Purple */
+
+    border: 150px solid #62319e;
+    opacity: 0.05;
+    border-radius: 50%;
+  }
+
+  .circle-2 {
+    position: absolute;
+    width: 732px;
+    height: 732px;
+    top: -150px;
+
+    /* Yellow */
+
+    border: 150px solid #ffb24d;
+    opacity: 0.05;
+    border-radius: 50%;
+    right: -200px;
+  }
+
+  .circle-3 {
+    position: absolute;
+    width: 224px;
+    height: 224px;
+    left: 203px;
+    bottom: 0;
+
+    /* Blue */
+
+    border-radius: 50%;
+    border: 50px solid #4dbfff;
+    opacity: 0.08;
+  }
+`;
 
 export default withTranslation('common')(Hero);
