@@ -11,13 +11,13 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
     <nav className={className}>
       <Grid>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} sm={6}>
             <div className="navbar-header">
               <div className="navbar-logo"></div>
               <h1 className="navbar-brand">{t('navigation.brand')}</h1>
             </div>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} sm={6}>
             <ul className="navbar-nav">
               <li>
                 <a href="#home">{t('navigation.home')}</a>
@@ -60,7 +60,7 @@ const Navigation = styled(NavigationTemplate)`
     justify-content: flex-end;
     list-style-type: none;
 
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
       display: flex;
     }
 

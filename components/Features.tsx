@@ -60,9 +60,14 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
 const Features = styled(FeaturesTemplate)`
   .heading {
     text-align: center;
+    margin-bottom: 3rem;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      margin-bottom: 0;
+    }
   }
   .feature {
-    padding: 4rem 0;
+    padding: 1rem 0;
     position: relative;
     display: flex;
 
@@ -82,12 +87,15 @@ const Features = styled(FeaturesTemplate)`
     &-image {
       background-repeat: no-repeat;
       background-size: contain;
-      width: 500px;
-      height: 420px;
+      background-position: center;
+      width: 100%;
+      height: 60vw;
 
       @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
         position: absolute;
         top: 20px;
+        width: 500px;
+        height: 420px;
       }
     }
 

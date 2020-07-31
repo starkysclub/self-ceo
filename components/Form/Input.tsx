@@ -20,6 +20,10 @@ const Input = styled(InputTemplate)`
   width: 100%;
   font-size: 18px;
   line-height: 28px;
+
+  &:focus {
+    border-color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export default Input;

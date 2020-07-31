@@ -14,7 +14,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
-          <Col xs={12} md={5} mdOffset={1}>
+          <Col xs={12} sm={8} smOffset={2} md={5} mdOffset={1}>
             <div className="content">
               <h2>{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
@@ -30,8 +30,26 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
 };
 
 const Hero = styled(HeroTemplate)`
-  margin-bottom: -10rem;
+  margin-bottom: -15rem;
   overflow: hidden;
+  padding-top: 2rem !important;
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+    margin-bottom: -6rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    margin-bottom: -20rem;
+  }
+
+  .content {
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 
   .image {
     width: 100%;
@@ -43,53 +61,73 @@ const Hero = styled(HeroTemplate)`
     right: 10vw;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      position: absolute;
       width: 800px;
       height: 824px;
-      position: absolute;
-      top: -180px;
+      top: -40px;
       right: 0;
     }
   }
   .circle-1 {
     position: absolute;
-    width: 617px;
-    height: 617px;
-    left: -105px;
-    top: -150px;
-
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -30px;
     /* Purple */
-
-    border: 150px solid #62319e;
+    border: 50px solid #62319e;
     opacity: 0.05;
     border-radius: 50%;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 617px;
+      height: 617px;
+      left: -170px;
+      top: -30px;
+      border-width: 150px;
+    }
   }
 
   .circle-2 {
     position: absolute;
-    width: 732px;
-    height: 732px;
-    top: -150px;
-
+    width: 250px;
+    height: 250px;
+    top: 150px;
+    right: -100px;
     /* Yellow */
-
-    border: 150px solid #ffb24d;
+    border: 50px solid #ffb24d;
     opacity: 0.05;
     border-radius: 50%;
-    right: -200px;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 732px;
+      height: 732px;
+      top: 20px;
+      right: -200px;
+      border-width: 150px;
+    }
   }
 
   .circle-3 {
     position: absolute;
-    width: 224px;
-    height: 224px;
-    left: 203px;
-    bottom: 0;
+    width: 70px;
+    height: 70px;
+    left: 50px;
+    bottom: 180px;
 
     /* Blue */
 
     border-radius: 50%;
-    border: 50px solid #4dbfff;
+    border: 20px solid #4dbfff;
     opacity: 0.08;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 224px;
+      height: 224px;
+      left: 130px;
+      bottom: -40px;
+      border-width: 50px;
+    }
   }
 `;
 

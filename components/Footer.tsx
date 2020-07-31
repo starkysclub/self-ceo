@@ -69,6 +69,11 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
 const Footer = styled(FooterTemplate)`
   .brand {
     display: flex;
+    justify-content: center;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      justify-content: flex-start;
+    }
 
     h2 {
       line-height: 4.5rem;

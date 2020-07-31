@@ -21,6 +21,10 @@ const TextArea = styled(TextAreaTemplate)`
   min-height: 130px;
   font-size: 18px;
   line-height: 28px;
+
+  &:focus {
+    border-color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export default TextArea;

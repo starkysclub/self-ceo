@@ -51,11 +51,17 @@ const Contact = styled(ContactTemplate)`
     margin-bottom: 5rem;
   }
   .image {
-    width: 500px;
-    height: 440px;
+    width: 100%;
+    height: 300px;
     background: url('/images/contact.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 500px;
+      height: 440px;
+    }
   }
 `;
 
