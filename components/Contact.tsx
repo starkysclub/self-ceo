@@ -52,11 +52,11 @@ const Contact = styled(ContactTemplate)`
   }
   .image {
     width: 100%;
-    height: 300px;
+    height: 90vw;
     background: url('/images/contact.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center top;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       width: 500px;

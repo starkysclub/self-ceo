@@ -9,14 +9,14 @@ interface HeroTemplateProps extends WithTranslation {}
 const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
   return (
     <Section className={className}>
-      <Grid style={{ position: 'relative', minHeight: '800px' }}>
+      <Grid style={{ position: 'relative' }}>
         <div className="circle-1" />
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
           <Col xs={12} sm={8} smOffset={2} md={5} mdOffset={1}>
             <div className="content">
-              <h2>{t('hero.title')}</h2>
+              <h2 className="as-h1">{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
             </div>
           </Col>
@@ -30,42 +30,51 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
 };
 
 const Hero = styled(HeroTemplate)`
-  margin-bottom: -15rem;
   overflow: hidden;
   padding-top: 2rem !important;
+  margin-bottom: -2rem;
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
-    margin-bottom: -6rem;
+    min-height: 1000px;
   }
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
     margin-bottom: -20rem;
   }
 
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+    padding-top: 5rem !important;
+  }
+
   .content {
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    max-width: 240px;
+    margin: 0 auto;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
       height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      max-width: 100%;
     }
   }
 
   .image {
     width: 100%;
-    height: 90vw;
+    height: 55vw;
     background: url('/images/FreeiPhoneXr1.png');
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
-    right: 10vw;
+    background-position: center top;
+    right: 30px;
+    position: relative;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       position: absolute;
       width: 800px;
       height: 824px;
       top: -40px;
-      right: 0;
+      right: -70px;
     }
   }
   .circle-1 {
@@ -112,8 +121,8 @@ const Hero = styled(HeroTemplate)`
     position: absolute;
     width: 70px;
     height: 70px;
-    left: 50px;
-    bottom: 180px;
+    left: 10px;
+    bottom: -40px;
 
     /* Blue */
 
@@ -125,7 +134,7 @@ const Hero = styled(HeroTemplate)`
       width: 224px;
       height: 224px;
       left: 130px;
-      bottom: -40px;
+      bottom: -340px;
       border-width: 50px;
     }
   }

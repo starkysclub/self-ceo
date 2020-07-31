@@ -22,12 +22,13 @@ const main = css`
 
     html {
         font-family: ${({ theme }) => theme.fonts.fontBase};
-        font-size: 16px;
+        font-size: 14px;
         color: ${({ theme }) => theme.colors.default};
         text-align: center;
 
         @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
             text-align: left;
+            font-size: 16px;
         }
     }
 `;

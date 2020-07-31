@@ -29,7 +29,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                     <a href="#">{t('footer.terms')}</a>
                   </li>
                   <li>
-                    <a href="#">{t('footer.privace')}</a>
+                    <a href="#">{t('footer.privacy')}</a>
                   </li>
                   <li>
                     <a href="#">{t('footer.company')}</a>
@@ -76,20 +76,43 @@ const Footer = styled(FooterTemplate)`
     }
 
     h2 {
-      line-height: 4.5rem;
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+      }
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+        font-size: 3.2rem;
+        line-height: 4.5rem;
+      }
     }
   }
   .logo {
-    width: 70px;
-    height: 70px;
+    width: 38px;
+    height: 38px;
     background: url('/images/AppIconBig.png');
-    margin-right: 1rem;
+    background-size: contain;
+    margin-right: 0.7rem;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   .description {
     color: ${({ theme }) => theme.colors.grey3};
-    font-size: ${({ theme }) => theme.fontSizes.textMedium};
-    line-height: ${({ theme }) => theme.lineHeights.textMedium};
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+      font-size: ${({ theme }) => theme.fontSizes.textMedium};
+      line-height: ${({ theme }) => theme.lineHeights.textMedium};
+    }
   }
 
   h4 {
@@ -126,7 +149,7 @@ const Footer = styled(FooterTemplate)`
 
   .copyright {
     text-align: center;
-    margin: 4rem 0 -1rem;
+    margin: 4rem 0 0;
     padding: 4rem 0 0;
     border-top: 1px solid #ede8f5;
   }

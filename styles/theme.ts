@@ -62,8 +62,11 @@ export interface IThemeInterface {
     textBig: string;
 
     h1: string;
+    h1small: string;
     h2: string;
+    h2small: string;
     h3: string;
+    h3small: string;
     h4: string;
     h5: string;
     h6: string;
@@ -77,8 +80,11 @@ export interface IThemeInterface {
     textSupBig: string;
     textBig: string;
     h1: string;
+    h1small: string;
     h2: string;
+    h2small: string;
     h3: string;
+    h3small: string;
     h4: string;
     h5: string;
   };
@@ -141,32 +147,38 @@ export const theme: IThemeInterface = {
     textBold: 700,
   },
   fontSizes: {
-    textBase: rem('22px'),
-    textSmall: rem('11px'),
-    textSubMedium: rem('15px'),
-    textMedium: rem('18px'),
-    textSupMedium: rem('18px'),
-    textBig: rem('22px'),
-    h1: rem('86px'),
-    h2: rem('48px'),
-    h3: rem('36px'),
-    h4: rem('26px'),
-    h5: rem('20px'),
-    h6: rem('12px'),
+    textBase: '22px',
+    textSmall: '11px',
+    textSubMedium: '15px',
+    textMedium: '18px',
+    textSupMedium: '18px',
+    textBig: '22px',
+    h1small: '36px',
+    h1: '86px',
+    h2small: '32px',
+    h2: '64px',
+    h3: '36px',
+    h3small: '24px',
+    h4: '26px',
+    h5: '20px',
+    h6: '12px',
   },
   lineHeights: {
-    textBase: rem('33px'),
-    textSmall: rem('11px'),
-    textSubMedium: rem('15px'),
-    textSupMedium: rem('18px'),
-    textMedium: rem('28px'),
-    textBig: rem('22px'),
-    textSupBig: rem('24px'),
-    h1: rem('104px'),
-    h2: rem('50px'),
-    h3: rem('28px'),
-    h4: rem('31px'),
-    h5: rem('22px'),
+    textBase: '33px',
+    textSmall: '11px',
+    textSubMedium: '15px',
+    textSupMedium: '18px',
+    textMedium: '28px',
+    textBig: '22px',
+    textSupBig: '24px',
+    h1: '104px',
+    h1small: '44px',
+    h2: '78px',
+    h2small: '39px',
+    h3: '28px',
+    h3small: '29px',
+    h4: '31px',
+    h5: '22px',
   },
   letterSpacing: '0.01em',
   flexboxgrid: {
