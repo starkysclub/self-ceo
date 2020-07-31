@@ -66,14 +66,17 @@ const Features = styled(FeaturesTemplate)`
     position: relative;
     display: flex;
 
-    &:nth-of-type(odd) {
-      flex-direction: column-reverse;
-    }
-
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-      flex-direction: row;
       min-height: 460px;
       padding: 6rem 0;
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: column-reverse;
+
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+        flex-direction: row;
+      }
     }
 
     &-image {
