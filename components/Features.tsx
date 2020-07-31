@@ -22,12 +22,12 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
             <p>{t('features.todos.description')}</p>
           </Col>
           <Col xs={12} md={6}>
-            <div className="feature-image todos" />
+            <div className="feature-right feature-image todos" />
           </Col>
         </Row>
         <Row className="feature">
           <Col xs={12} md={6}>
-            <div className="feature-image goals" />
+            <div className="feature-left feature-image goals" />
           </Col>
           <Col xs={12} md={6}>
             <h3>{t('features.goals.title')}</h3>
@@ -40,12 +40,12 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
             <p>{t('features.events.description')}</p>
           </Col>
           <Col xs={12} md={6}>
-            <div className="feature-image events" />
+            <div className="feature-right feature-image events" />
           </Col>
         </Row>
         <Row className="feature">
           <Col xs={12} md={6}>
-            <div className="feature-image habits" />
+            <div className="feature-left feature-image habits" />
           </Col>
           <Col xs={12} md={6}>
             <h3>{t('features.habbits.title')}</h3>
@@ -62,46 +62,51 @@ const Features = styled(FeaturesTemplate)`
     text-align: center;
   }
   .feature {
-    padding: 6rem 0;
+    padding: 4rem 0;
     position: relative;
-    min-height: 460px;
+    display: flex;
+
+    &:nth-of-type(odd) {
+      flex-direction: column-reverse;
+    }
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      flex-direction: row;
+      min-height: 460px;
+      padding: 6rem 0;
+    }
 
     &-image {
       background-repeat: no-repeat;
       background-size: contain;
+      width: 500px;
+      height: 420px;
+
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+        position: absolute;
+        top: 20px;
+      }
+    }
+
+    &-right {
+      right: 0;
+    }
+
+    &-left {
+      left: 0;
     }
   }
   .todos {
-    background: url('/images/TODOs.png');
-    width: 500px;
-    height: 420px;
-    position: absolute;
-    top: 20px;
-    right: 0;
+    background-image: url('/images/TODOs.png');
   }
   .goals {
-    background: url('/images/goals.png');
-    width: 520px;
-    height: 470px;
-    position: absolute;
-    top: 20px;
-    left: 0;
+    background-image: url('/images/goals.png');
   }
   .events {
-    background: url('/images/events.png');
-    width: 500px;
-    height: 420px;
-    position: absolute;
-    top: 20px;
-    right: 0;
+    background-image: url('/images/events.png');
   }
   .habits {
-    background: url('/images/habits.png');
-    width: 520px;
-    height: 470px;
-    position: absolute;
-    top: 20px;
-    left: 0;
+    background-image: url('/images/habits.png');
   }
 `;
 

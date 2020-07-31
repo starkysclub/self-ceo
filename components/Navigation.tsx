@@ -56,9 +56,13 @@ const Navigation = styled(NavigationTemplate)`
     }
   }
   .navbar-nav {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     list-style-type: none;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      display: flex;
+    }
 
     li a,
     li a:active,

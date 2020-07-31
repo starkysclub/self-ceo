@@ -31,16 +31,24 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
 
 const Hero = styled(HeroTemplate)`
   margin-bottom: -10rem;
+  overflow: hidden;
 
   .image {
-    width: 800px;
-    height: 824px;
+    width: 100%;
+    height: 90vw;
     background: url('/images/FreeiPhoneXr1.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: -180px;
-    right: 0;
+    right: 10vw;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      width: 800px;
+      height: 824px;
+      position: absolute;
+      top: -180px;
+      right: 0;
+    }
   }
   .circle-1 {
     position: absolute;
