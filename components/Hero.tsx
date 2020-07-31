@@ -14,7 +14,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
-          <Col xs={12} sm={8} smOffset={2} md={5} mdOffset={1}>
+          <Col xs={12} sm={8} smOffset={2} md={5} mdOffset={1} lg={7} lgOffset={0}>
             <div className="content">
               <h2 className="as-h1">{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
