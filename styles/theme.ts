@@ -1,5 +1,4 @@
 import * as styledComponents from 'styled-components';
-import { rem } from 'polished';
 import { FC } from 'react';
 
 const {
