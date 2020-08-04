@@ -20,7 +20,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
-          <Col xs={12} sm={12} smOffset={1} md={6} mdOffset={0} lg={7} lgOffset={0}>
+          <Col xs={12} sm={12} md={6} mdOffset={0} lg={7} lgOffset={0}>
             <div className="content">
               <h2 className="as-h1">{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
@@ -43,7 +43,6 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
           </Col>
           <Col xs={12} md={5}>
             <div className="image"></div>
-
             <div className="download-buttons hide-md">
               <LinkButton
                 href={

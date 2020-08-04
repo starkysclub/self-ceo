@@ -3,11 +3,11 @@ import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../i18n';
-import { rem } from 'polished';
 import { LinkButton } from './Button';
 import Android from '../public/images/android.svg';
 import Apple from '../public/images/apple.svg';
 import useMobileDetect from '../hooks/useMobileDetect';
+import { rem } from 'polished';
 
 interface FooterTemplateProps extends WithTranslation {}
 
@@ -28,7 +28,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
           </Col>
           <Col xs={12} md={7} mdOffset={1}>
             <Row className="links">
-              <Col md={4}>
+              <Col md={5}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
@@ -42,7 +42,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col md={4}>
+              <Col md={3}>
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
@@ -133,7 +133,7 @@ const Footer = styled(FooterTemplate)`
   .description {
     color: ${({ theme }) => theme.colors.grey3};
     font-size: ${rem('18px')};
-    line-height: ${rem('30px')};
+    line-height: ${rem('24px')};
   }
 
   h4 {
@@ -167,6 +167,8 @@ const Footer = styled(FooterTemplate)`
           letter-spacing: 0.5px;
           color: ${({ theme }) => theme.colors.default};
           text-decoration: none;
+          font-size: ${rem('18px')};
+          line-height: ${rem('26px')};
 
           &:hover,
           &.active {
@@ -195,7 +197,8 @@ const Footer = styled(FooterTemplate)`
     margin: 4rem 0 0;
     padding: 4rem 0 0;
     border-top: 1px solid #ede8f5;
-    line-height: 24px;
+    font-size: ${rem('18px')};
+    line-height: ${rem('24px')};
   }
 `;
 
