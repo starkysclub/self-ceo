@@ -29,7 +29,6 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
                   href={
                     currentDevice.isAndroid() ? process.env.NEXT_PUBLIC_GOOGLE_PLAY : process.env.NEXT_PUBLIC_APP_STORE
                   }
-                  secondary={currentDevice.isAndroid() || currentDevice.isIos()}
                 >
                   Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
                 </LinkButton>
@@ -48,7 +47,6 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
                 href={
                   currentDevice.isAndroid() ? process.env.NEXT_PUBLIC_GOOGLE_PLAY : process.env.NEXT_PUBLIC_APP_STORE
                 }
-                secondary={currentDevice.isAndroid() || currentDevice.isIos()}
               >
                 Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
               </LinkButton>

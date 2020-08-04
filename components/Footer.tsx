@@ -65,7 +65,6 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                         ? process.env.NEXT_PUBLIC_GOOGLE_PLAY
                         : process.env.NEXT_PUBLIC_APP_STORE
                     }
-                    secondary={!currentDevice.isMobile()}
                   >
                     Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
                   </LinkButton>
