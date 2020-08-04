@@ -24,9 +24,13 @@ const main = css`
 
     html {
         font-family: ${({ theme }) => theme.fonts.fontBase};
-        font-size: 14px;
+        font-size: 12px;
         color: ${({ theme }) => theme.colors.default};
         text-align: center;
+
+        @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+            font-size: 14px;
+        }
 
         @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
             text-align: left;

@@ -21,7 +21,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   };
 
   return (
-    <Section className={className}>
+    <Section className={className} id="contact">
       <Grid>
         <Row>
           <Col xs={12}>
@@ -63,11 +63,16 @@ const Contact = styled(ContactTemplate)`
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
       width: 420px;
       height: 440px;
+      margin: 0 auto;
     }
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
       width: 500px;
     }
+  }
+
+  button {
+    max-width: 100% !important;
   }
 `;
 

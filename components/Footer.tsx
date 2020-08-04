@@ -27,7 +27,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
             <p className="description">{t('footer.description')}</p>
           </Col>
           <Col xs={12} md={7} mdOffset={1}>
-            <Row style={{ justifyContent: 'center' }}>
+            <Row className="links">
               <Col md={4}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
@@ -132,56 +132,46 @@ const Footer = styled(FooterTemplate)`
 
   .description {
     color: ${({ theme }) => theme.colors.grey3};
-    font-size: 14px;
-    line-height: 21px;
-
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
-      font-size: ${({ theme }) => theme.fontSizes.textMedium};
-      line-height: ${({ theme }) => theme.lineHeights.textMedium};
-    }
+    font-size: ${rem('18px')};
+    line-height: ${rem('30px')};
   }
 
   h4 {
     margin: 0.5rem 0;
     padding-bottom: 0.5rem;
-    font-size: 18px;
-    line-height: 24px;
     text-align: left;
-
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-      font-size: 26px;
-      line-height: 31px;
-      text-align: center;
-    }
   }
 
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: left;
+  .links {
+    justify-content: center;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-      text-align: center;
+      margin-top: 0.5rem;
+      justify-content: flex-start;
     }
 
-    li {
-      margin: 1rem 0;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: left;
 
-      a,
-      a:active,
-      a:visited {
-        font-family: Jost;
-        font-style: normal;
-        font-weight: normal;
-        font-size: ${rem('18px')};
-        line-height: ${rem('26px')};
-        letter-spacing: 0.5px;
-        color: ${({ theme }) => theme.colors.default};
-        text-decoration: none;
+      li {
+        margin: 1rem 0;
 
-        &:hover,
-        &.active {
-          color: ${({ theme }) => theme.colors.primary};
+        a,
+        a:active,
+        a:visited {
+          font-family: Jost;
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 0.5px;
+          color: ${({ theme }) => theme.colors.default};
+          text-decoration: none;
+
+          &:hover,
+          &.active {
+            color: ${({ theme }) => theme.colors.primary};
+          }
         }
       }
     }
@@ -189,9 +179,12 @@ const Footer = styled(FooterTemplate)`
 
   .download-buttons {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-      margin-top: 1.2rem;
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
     }

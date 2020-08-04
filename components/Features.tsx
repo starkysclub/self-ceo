@@ -8,7 +8,7 @@ interface FeaturesTemplateProps extends WithTranslation {}
 
 const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
   return (
-    <Section className={className}>
+    <Section className={className} id="features">
       <Grid>
         <Row className="heading">
           <Col xs={12}>
@@ -100,7 +100,7 @@ const Features = styled(FeaturesTemplate)`
     }
 
     &-right {
-      right: 0;
+      right: -40px;
     }
 
     &-left {

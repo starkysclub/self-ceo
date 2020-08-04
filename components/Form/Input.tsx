@@ -18,8 +18,8 @@ const Input = styled(InputTemplate)`
   padding: 0.6rem 1rem 0.5rem;
   margin: 1rem 0;
   width: 100%;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: ${({ theme }) => theme.fontSizes.textBase};
+  line-height: ${({ theme }) => theme.lineHeights.textBase};
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary};

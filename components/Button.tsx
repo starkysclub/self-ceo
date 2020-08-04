@@ -1,4 +1,5 @@
 import styled, { css } from '../styles/theme';
+import { rem } from 'polished';
 
 interface ButtonProps {
   primary?: boolean;
@@ -6,13 +7,28 @@ interface ButtonProps {
 }
 
 const styles = css`
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  padding: 0.8rem 2.5rem 0.74rem;
+  padding: 1.1rem 1rem 0.9rem;
   margin: 0 1rem 1rem 0;
-  /* identical to box height */
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  font-size: ${rem('20px')};
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    width: auto;
+    display: inline-flex;
+    padding: 0.8rem 1rem 0.74rem;
+    font-size: ${rem('18px')};
+  }
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+    padding: 0.8rem 2.5rem 0.74rem;
+  }
 
   text-align: center;
   letter-spacing: 0.5px;
@@ -26,6 +42,9 @@ const styles = css`
   svg {
     width: 16px;
     height: 16px;
+    position: relative;
+    top: -2px;
+    margin-left: 5px;
 
     path {
       fill: #fff;
@@ -35,6 +54,7 @@ const styles = css`
   &:hover {
     color: #62319e !important;
     background: transparent;
+    text-decoration: none;
 
     svg {
       path {

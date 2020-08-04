@@ -44,9 +44,12 @@ const DownloadTemplate: SC<DownloadTemplateProps> = ({ className, t }) => {
 
 const Download = styled(DownloadTemplate)`
   text-align: center;
+  justify-content: center;
 
   .download-buttons {
     margin-top: 3rem;
+    justify-content: center;
+    display: flex;
   }
 `;
 

@@ -11,6 +11,10 @@ const Section = styled.section<SectionProps>`
   position: relative;
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    padding: 6rem 0;
+  }
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
     padding: 10rem 0;
   }
 `;

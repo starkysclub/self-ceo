@@ -20,7 +20,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
-          <Col xs={12} sm={10} smOffset={1} md={5} mdOffset={1} lg={7} lgOffset={0}>
+          <Col xs={12} sm={12} smOffset={1} md={6} mdOffset={0} lg={7} lgOffset={0}>
             <div className="content">
               <h2 className="as-h1">{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
@@ -88,25 +88,50 @@ const Hero = styled(HeroTemplate)`
   }
 
   .content {
-    max-width: 260px;
+    max-width: 300px;
     margin: 0 auto;
     z-index: 9;
     position: relative;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
-      height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       max-width: 100%;
     }
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      height: 600px;
+
+      @media (orientation: portrait) {
+        height: 600px;
+      }
+    }
+
+    .as-h1 {
+      font-size: 3.5rem;
+      line-height: 4.5rem;
+
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+        font-size: ${({ theme }) => theme.fontSizes.h1};
+        line-height: ${({ theme }) => theme.lineHeights.h1};
+      }
+    }
   }
 
   .download-buttons {
     margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+      margin-top: 0;
+      flex-direction: row;
+    }
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       margin-top: 1.2rem;
+      justify-content: flex-start;
     }
   }
 
@@ -132,7 +157,7 @@ const Hero = styled(HeroTemplate)`
     width: 200px;
     height: 200px;
     left: -50px;
-    top: -30px;
+    top: -25px;
     /* Purple */
     border: 50px solid #62319e;
     opacity: 0.05;
@@ -172,7 +197,7 @@ const Hero = styled(HeroTemplate)`
     width: 70px;
     height: 70px;
     left: 10px;
-    bottom: -40px;
+    bottom: -10px;
 
     /* Blue */
 

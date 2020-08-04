@@ -19,8 +19,8 @@ const TextArea = styled(TextAreaTemplate)`
   margin: 1rem 0;
   width: 100%;
   min-height: 130px;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: ${({ theme }) => theme.fontSizes.textBase};
+  line-height: ${({ theme }) => theme.lineHeights.textBase};
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary};

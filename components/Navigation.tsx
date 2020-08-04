@@ -27,7 +27,7 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
           <Col xs={12} sm={6}>
             <ul className={`navbar-nav${open ? ' open' : ''}`}>
               <li>
-                <a href="#home">{t('navigation.home')}</a>
+                <a href="#top">{t('navigation.home')}</a>
               </li>
               <li>
                 <a href="#features">{t('navigation.features')}</a>
