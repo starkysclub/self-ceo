@@ -69,7 +69,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
 const Hero = styled(HeroTemplate)`
   overflow: hidden;
   padding-top: 2rem !important;
-  margin-bottom: -5rem;
+  margin-bottom: -2rem;
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
     min-height: 1000px;
@@ -120,7 +120,7 @@ const Hero = styled(HeroTemplate)`
   }
 
   .download-buttons {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
 
