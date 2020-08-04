@@ -3,12 +3,14 @@ import fonts from './fonts';
 import colors from './colors';
 import text from './text';
 import normalize from './normalize';
+import responsive from './responsive';
 
 const main = css`
   ${normalize}
   ${fonts}
   ${colors}
   ${text}
+  ${responsive}
 
 
   * {

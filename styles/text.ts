@@ -26,8 +26,13 @@ const text = css`
     letter-spacing: 0.01em;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
-      font-size: ${theme.fontSizes.h2};
-      line-height: ${theme.lineHeights.h2};
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+      font-size: 64px;
+      line-height: 78px;
     }
   }
   h3,
@@ -89,6 +94,23 @@ const text = css`
   }
   .text-italic {
     font-style: italic;
+  }
+  .text-left {
+    text-align: left !important;
+  }
+  a,
+  a:active,
+  a:visited {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    color: ${({ theme }) => theme.colors.primary};
+    text-decoration: none;
+
+    &:hover,
+    &.active {
+      text-decoration: underline;
+    }
   }
 `;
 

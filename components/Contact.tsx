@@ -7,6 +7,7 @@ import Form from './Form/Form';
 import Input from './Form/Input';
 import TextArea from './Form/TextArea';
 import { FormikConfig } from 'formik';
+import { Button } from './Button';
 
 interface ContactTemplateProps extends WithTranslation {}
 
@@ -37,6 +38,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
               <Input name="email" placeholder={t('contact.fields.email')} />
               <Input name="topic" placeholder={t('contact.fields.topic')} />
               <TextArea name="message" placeholder={t('contact.fields.message')} />
+              <Button>Send</Button>
             </Form>
           </Col>
         </Row>
@@ -58,9 +60,13 @@ const Contact = styled(ContactTemplate)`
     background-size: contain;
     background-position: center top;
 
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-      width: 500px;
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+      width: 420px;
       height: 440px;
+    }
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+      width: 500px;
     }
   }
 `;

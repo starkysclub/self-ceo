@@ -51,6 +51,7 @@
     "company": "Company",
     "menu": "Menu",
     "download": "Download",
-    "copyright": "Made with love by {{0}}. © All Rights Reserved. 2020 Self-CEO "
+    "copyright-1": "Made with love by ",
+    "copyright-2": ". © All Rights Reserved. 2020 Self-CEO "
   }
 }

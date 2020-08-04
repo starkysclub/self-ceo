@@ -4,10 +4,16 @@ import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../i18n';
 import { rem } from 'polished';
+import { LinkButton } from './Button';
+import Android from '../public/images/android.svg';
+import Apple from '../public/images/apple.svg';
+import useMobileDetect from '../hooks/useMobileDetect';
 
 interface FooterTemplateProps extends WithTranslation {}
 
 const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
+  const currentDevice = useMobileDetect();
+
   return (
     <Section className={className} colored>
       <Grid>
@@ -21,8 +27,8 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
             <p className="description">{t('footer.description')}</p>
           </Col>
           <Col xs={12} md={7} mdOffset={1}>
-            <Row>
-              <Col xs={12} md={4}>
+            <Row style={{ justifyContent: 'center' }}>
+              <Col md={4}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
@@ -36,7 +42,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col xs={12} md={4}>
+              <Col md={4}>
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
@@ -51,14 +57,35 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                 </ul>
               </Col>
               <Col xs={12} md={4}>
-                <h4>{t('footer.download')}</h4>
+                <h4 className="text-left hide visible-md">{t('footer.download')}</h4>
+                <div className="download-buttons">
+                  <LinkButton
+                    href={
+                      currentDevice.isAndroid()
+                        ? process.env.NEXT_PUBLIC_GOOGLE_PLAY
+                        : process.env.NEXT_PUBLIC_APP_STORE
+                    }
+                    secondary={!currentDevice.isMobile()}
+                  >
+                    Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
+                  </LinkButton>
+                  {!currentDevice.isMobile() && (
+                    <LinkButton href={process.env.NEXT_PUBLIC_GOOGLE_PLAY} secondary>
+                      Download <Android />
+                    </LinkButton>
+                  )}
+                </div>
               </Col>
             </Row>
           </Col>
         </Row>
         <Row>
           <Col xs={12}>
-            <div className="copyright">{t('footer.copyright')}</div>
+            <div className="copyright">
+              {t('footer.copyright-1')}
+              <a href="http://starkysclub.com/">Starky&apos;s club</a>
+              {t('footer.copyright-2')}
+            </div>
           </Col>
         </Row>
       </Grid>
@@ -81,7 +108,6 @@ const Footer = styled(FooterTemplate)`
         line-height: 3.8rem;
       }
       @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-        font-size: 3.2rem;
         line-height: 4.5rem;
       }
     }
@@ -118,11 +144,25 @@ const Footer = styled(FooterTemplate)`
   h4 {
     margin: 0.5rem 0;
     padding-bottom: 0.5rem;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      font-size: 26px;
+      line-height: 31px;
+      text-align: center;
+    }
   }
 
   ul {
     list-style-type: none;
     padding-left: 0;
+    text-align: left;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      text-align: center;
+    }
 
     li {
       margin: 1rem 0;
@@ -136,7 +176,7 @@ const Footer = styled(FooterTemplate)`
         font-size: ${rem('18px')};
         line-height: ${rem('26px')};
         letter-spacing: 0.5px;
-        color: ${({ theme }) => theme.colors.grey3};
+        color: ${({ theme }) => theme.colors.default};
         text-decoration: none;
 
         &:hover,
@@ -147,11 +187,22 @@ const Footer = styled(FooterTemplate)`
     }
   }
 
+  .download-buttons {
+    margin-top: 2rem;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   .copyright {
     text-align: center;
     margin: 4rem 0 0;
     padding: 4rem 0 0;
     border-top: 1px solid #ede8f5;
+    line-height: 24px;
   }
 `;
 

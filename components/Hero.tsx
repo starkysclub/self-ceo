@@ -3,10 +3,16 @@ import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../i18n';
+import { LinkButton } from './Button';
+import Android from '../public/images/android.svg';
+import Apple from '../public/images/apple.svg';
+import useMobileDetect from '../hooks/useMobileDetect';
 
 interface HeroTemplateProps extends WithTranslation {}
 
 const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
+  const currentDevice = useMobileDetect();
+
   return (
     <Section className={className}>
       <Grid style={{ position: 'relative' }}>
@@ -14,14 +20,45 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
         <div className="circle-2" />
         <div className="circle-3" />
         <Row>
-          <Col xs={12} sm={8} smOffset={2} md={5} mdOffset={1} lg={7} lgOffset={0}>
+          <Col xs={12} sm={10} smOffset={1} md={5} mdOffset={1} lg={7} lgOffset={0}>
             <div className="content">
               <h2 className="as-h1">{t('hero.title')}</h2>
               <p>{t('hero.description')}</p>
+              <div className="download-buttons hide visible-md">
+                <LinkButton
+                  href={
+                    currentDevice.isAndroid() ? process.env.NEXT_PUBLIC_GOOGLE_PLAY : process.env.NEXT_PUBLIC_APP_STORE
+                  }
+                  secondary={currentDevice.isAndroid() || currentDevice.isIos()}
+                >
+                  Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
+                </LinkButton>
+                {!currentDevice.isMobile() && (
+                  <LinkButton href={process.env.NEXT_PUBLIC_GOOGLE_PLAY} secondary>
+                    Download <Android />
+                  </LinkButton>
+                )}
+              </div>
             </div>
           </Col>
           <Col xs={12} md={5}>
             <div className="image"></div>
+
+            <div className="download-buttons hide-md">
+              <LinkButton
+                href={
+                  currentDevice.isAndroid() ? process.env.NEXT_PUBLIC_GOOGLE_PLAY : process.env.NEXT_PUBLIC_APP_STORE
+                }
+                secondary={currentDevice.isAndroid() || currentDevice.isIos()}
+              >
+                Download {currentDevice.isAndroid() ? <Android /> : <Apple />}
+              </LinkButton>
+              {!currentDevice.isMobile() && (
+                <LinkButton href={process.env.NEXT_PUBLIC_GOOGLE_PLAY} secondary>
+                  Download <Android />
+                </LinkButton>
+              )}
+            </div>
           </Col>
         </Row>
       </Grid>
@@ -32,7 +69,7 @@ const HeroTemplate: SC<HeroTemplateProps> = ({ className, t }) => {
 const Hero = styled(HeroTemplate)`
   overflow: hidden;
   padding-top: 2rem !important;
-  margin-bottom: -2rem;
+  margin-bottom: -5rem;
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
     min-height: 1000px;
@@ -40,6 +77,10 @@ const Hero = styled(HeroTemplate)`
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
     margin-bottom: -20rem;
+
+    @media (orientation: portrait) {
+      margin-bottom: -28rem;
+    }
   }
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
@@ -47,8 +88,10 @@ const Hero = styled(HeroTemplate)`
   }
 
   .content {
-    max-width: 240px;
+    max-width: 260px;
     margin: 0 auto;
+    z-index: 9;
+    position: relative;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
       height: 500px;
@@ -59,22 +102,29 @@ const Hero = styled(HeroTemplate)`
     }
   }
 
+  .download-buttons {
+    margin-top: 3rem;
+
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+      margin-top: 1.2rem;
+    }
+  }
+
   .image {
     width: 100%;
-    height: 55vw;
+    height: 75vw;
     background: url('/images/FreeiPhoneXr1.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
-    right: 30px;
     position: relative;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       position: absolute;
       width: 800px;
-      height: 824px;
+      height: 660px;
       top: -40px;
-      right: -70px;
+      right: -175px;
     }
   }
   .circle-1 {
