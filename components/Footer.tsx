@@ -28,7 +28,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
           </Col>
           <Col xs={12} md={7} mdOffset={1}>
             <Row className="links">
-              <Col md={5}>
+              <Col xs={5} xsOffset={1} md={5}>
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
@@ -42,7 +42,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col md={3}>
+              <Col xs={4} xsOffset={1} md={3}>
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
