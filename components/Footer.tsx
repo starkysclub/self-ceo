@@ -28,7 +28,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
           </Col>
           <Col xs={12} md={7} mdOffset={1}>
             <Row className="links">
-              <Col xs={5} xsOffset={1} md={5}>
+              <Col md={5} className="important-links">
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
@@ -42,7 +42,7 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                   </li>
                 </ul>
               </Col>
-              <Col xs={4} xsOffset={1} md={3}>
+              <Col md={3} className="menu">
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
@@ -147,6 +147,10 @@ const Footer = styled(FooterTemplate)`
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       margin-top: 0.5rem;
       justify-content: flex-start;
+    }
+
+    .important-links {
+      width: 150px;
     }
 
     ul {
