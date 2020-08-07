@@ -15,7 +15,7 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
     <nav className={className}>
       <Grid>
         <Row>
-          <Col xs={12} sm={6}>
+          <Col xs={12} md={6}>
             <div className="navbar-header">
               <div className="navbar-logo"></div>
               <h1 className="navbar-brand">{t('navigation.brand')}</h1>
@@ -24,7 +24,7 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
               </button>
             </div>
           </Col>
-          <Col xs={12} sm={6}>
+          <Col xs={12} md={6}>
             <ul className={`navbar-nav${open ? ' open' : ''}`}>
               <li>
                 <a href="#top">{t('navigation.home')}</a>
@@ -68,7 +68,7 @@ const Navigation = styled(NavigationTemplate)`
       border: none;
       margin-left: auto;
 
-      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+      @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
         display: none;
       }
     }
@@ -84,7 +84,7 @@ const Navigation = styled(NavigationTemplate)`
       display: flex;
     }
 
-    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       display: flex;
       flex-direction: row;
     }
