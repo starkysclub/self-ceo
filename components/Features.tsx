@@ -58,8 +58,12 @@ const FeaturesTemplate: SC<FeaturesTemplateProps> = ({ className, t }) => {
 };
 
 const Features = styled(FeaturesTemplate)`
+  text-align: center;
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    text-align: left;
+  }
+
   .heading {
-    text-align: center;
     margin-bottom: 1rem;
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {

@@ -7,6 +7,7 @@ import Features from '../components/Features';
 import Download from '../components/Download';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import Page from '../components/Page';
 
 interface HompeageProps extends WithTranslation {}
 
@@ -14,10 +15,12 @@ const Homepage: NextPage<HompeageProps> = () => {
   return (
     <>
       <Navigation />
-      <Hero />
-      <Features />
-      <Download />
-      <Contact />
+      <Page>
+        <Hero />
+        <Features />
+        <Download />
+        <Contact />
+      </Page>
       <Footer />
     </>
   );

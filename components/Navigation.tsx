@@ -17,8 +17,10 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
         <Row>
           <Col xs={12} md={6}>
             <div className="navbar-header">
-              <div className="navbar-logo"></div>
-              <h1 className="navbar-brand">{t('navigation.brand')}</h1>
+              <a className="navbar-brand" href="/">
+                <div className="navbar-logo"></div>
+                <h1>{t('navigation.brand')}</h1>
+              </a>
               <button className={`navbar-toggle${open ? ' open' : ''}`} onClick={toggleOpen}>
                 <img src="/images/menu.svg" />
               </button>
@@ -27,13 +29,13 @@ const NavigationTemplate: SC<NavigationTemplateProps> = ({ className, t }) => {
           <Col xs={12} md={6}>
             <ul className={`navbar-nav${open ? ' open' : ''}`}>
               <li>
-                <a href="#top">{t('navigation.home')}</a>
+                <a href="/#top">{t('navigation.home')}</a>
               </li>
               <li>
-                <a href="#features">{t('navigation.features')}</a>
+                <a href="/#features">{t('navigation.features')}</a>
               </li>
               <li>
-                <a href="#contact">{t('navigation.contact')}</a>
+                <a href="/#contact">{t('navigation.contact')}</a>
               </li>
             </ul>
           </Col>
@@ -58,9 +60,24 @@ const Navigation = styled(NavigationTemplate)`
     }
 
     .navbar-brand {
-      font-size: 1.7rem;
-      line-height: 3.1rem;
-      font-family: ${({ theme }) => theme.fonts.fontHeadings};
+      color: ${({ theme }) => theme.colors.default};
+      display: flex;
+      align-items: center;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 3.1rem;
+        font-family: ${({ theme }) => theme.fonts.fontHeadings};
+
+        @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+          font-size: 1.7rem;
+        }
+      }
     }
 
     .navbar-toggle {
@@ -87,6 +104,7 @@ const Navigation = styled(NavigationTemplate)`
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       display: flex;
       flex-direction: row;
+      margin: 1rem 0;
     }
 
     li a,

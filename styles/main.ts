@@ -26,7 +26,6 @@ const main = css`
         font-family: ${({ theme }) => theme.fonts.fontBase};
         font-size: 12px;
         color: ${({ theme }) => theme.colors.default};
-        text-align: center;
 
         @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.sm}rem) {
             font-size: 14px;

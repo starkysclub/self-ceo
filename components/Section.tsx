@@ -6,16 +6,18 @@ interface SectionProps {
 }
 
 const Section = styled.section<SectionProps>`
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: ${({ colored }) => (colored ? 'rgba(98, 49, 158, 0.05)' : 'transparent')};
   position: relative;
 
   @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
 
-  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
-    padding: 10rem 0;
+  &:not(:first-of-type) {
+    @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+      padding: 10rem 0;
+    }
   }
 `;
 

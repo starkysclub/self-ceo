@@ -33,7 +33,9 @@ const text = css`
     font-weight: ${theme.fontWeights.textBold};
     font-family: ${theme.fonts.fontHeadings};
   }
-  p {
+  p,
+  ul,
+  ol {
     font-size: ${theme.fontSizes.textBase};
     line-height: ${theme.lineHeights.textBase};
   }

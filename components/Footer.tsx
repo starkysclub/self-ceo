@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../i18n';
@@ -15,14 +14,14 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
   const currentDevice = useMobileDetect();
 
   return (
-    <Section className={className} colored>
+    <footer className={className}>
       <Grid>
         <Row>
           <Col xs={12} md={4}>
-            <div className="brand">
+            <a href="/" className="brand">
               <div className="logo"></div>
               <h2>{t('footer.title')}</h2>
-            </div>
+            </a>
 
             <p className="description">{t('footer.description')}</p>
           </Col>
@@ -32,13 +31,13 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                 <h4>{t('footer.importantLinks')}</h4>
                 <ul>
                   <li>
-                    <a href="#">{t('footer.terms')}</a>
+                    <a href="/eula">{t('footer.eula')}</a>
                   </li>
                   <li>
-                    <a href="#">{t('footer.privacy')}</a>
+                    <a href="/privacy-policy">{t('footer.privacy')}</a>
                   </li>
                   <li>
-                    <a href="#">{t('footer.company')}</a>
+                    <a href="https://starkysclub.com">{t('footer.company')}</a>
                   </li>
                 </ul>
               </Col>
@@ -46,13 +45,13 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
                 <h4>{t('footer.menu')}</h4>
                 <ul>
                   <li>
-                    <a href="#home">{t('navigation.home')}</a>
+                    <a href="/#home">{t('navigation.home')}</a>
                   </li>
                   <li>
-                    <a href="#features">{t('navigation.features')}</a>
+                    <a href="/#features">{t('navigation.features')}</a>
                   </li>
                   <li>
-                    <a href="#contact">{t('navigation.contact')}</a>
+                    <a href="/#contact">{t('navigation.contact')}</a>
                   </li>
                 </ul>
               </Col>
@@ -88,14 +87,35 @@ const FooterTemplate: SC<FooterTemplateProps> = ({ className, t }) => {
           </Col>
         </Row>
       </Grid>
-    </Section>
+    </footer>
   );
 };
 
 const Footer = styled(FooterTemplate)`
+  padding: 4rem 0;
+  background: rgba(98, 49, 158, 0.05);
+  text-align: center;
+  position: relative;
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
+    padding: 6rem 0;
+    text-align: left;
+  }
+
+  @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.lg}rem) {
+    padding: 10rem 0;
+  }
+
   .brand {
     display: flex;
     justify-content: center;
+    align-items: center;
+    color: ${({ theme }) => theme.colors.default};
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
 
     @media (min-width: ${({ theme }) => theme.flexboxgrid.breakpoints.md}rem) {
       justify-content: flex-start;
