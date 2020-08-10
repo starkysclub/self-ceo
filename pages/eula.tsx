@@ -68,8 +68,8 @@ const EULA: NextPage<HompeageProps> = () => {
                 <T tag="p" id="eula.subscription.p2" />
                 <T tag="p" id="eula.subscription.p3" />
                 <ol>
-                  <T tag="p" id="eula.subscription.li1" />
-                  <T tag="p" id="eula.subscription.li2" />
+                  <T tag="li" id="eula.subscription.li1" />
+                  <T tag="li" id="eula.subscription.li2" />
                 </ol>
                 <T tag="p" id="eula.subscription.p4" />
                 <T tag="p" id="eula.subscription.p5" />
