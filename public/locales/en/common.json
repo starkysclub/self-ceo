@@ -39,7 +39,11 @@
       "name": "Your Name",
       "email": "Your Email",
       "topic": "Choose a topic",
-      "message": "Write your message"
+      "message": "Write your message",
+      "options": {
+        "bug-report": "Bug report",
+        "other": "Other"
+      }
     }
   },
   "footer": {

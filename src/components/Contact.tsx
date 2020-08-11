@@ -51,19 +51,17 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <Form
-              config={config}
-              formProps={{
-                name: 'contact-us',
-                action: '/contact-us',
-                'data-netlify': true,
-                'data-netlify-recaptcha': true,
-              }}
-            >
-              <input type="hidden" name="form-name" value="contact-us" />
+            <Form config={config}>
               <Input name="fullName" placeholder={t('contact.fields.name')} />
               <Input name="email" placeholder={t('contact.fields.email')} />
-              <Select name="topic" placeholder={t('contact.fields.topic')} />
+              <Select
+                name="topic"
+                options={[
+                  { label: t('contact.fields.options.bug-report'), value: t('contact.fields.options.bug-report') },
+                  { label: t('contact.fields.options.other'), value: t('contact.fields.options.other') },
+                ]}
+                placeholder={t('contact.fields.topic')}
+              />
               <TextArea name="message" placeholder={t('contact.fields.message')} />
               <Button>Send</Button>
             </Form>
