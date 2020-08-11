@@ -14,6 +14,9 @@ interface ContactTemplateProps extends WithTranslation {}
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
     console.info(values, formikHelpers);
+    fetch('/?form-submit', {
+      method: 'POST',
+    });
   };
 
   const initialValues = {};
@@ -38,7 +41,12 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
           <Col xs={12} md={6}>
             <Form
               config={config}
-              formProps={{ action: '/?form-sent', 'data-netlify': true, 'data-netlify-recaptcha': true }}
+              formProps={{
+                name: 'contact-us',
+                action: '/?form-sent',
+                'data-netlify': true,
+                'data-netlify-recaptcha': true,
+              }}
             >
               <Input name="name" placeholder={t('contact.fields.name')} />
               <Input name="email" placeholder={t('contact.fields.email')} />
