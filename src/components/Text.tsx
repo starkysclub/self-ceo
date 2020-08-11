@@ -1,4 +1,4 @@
-import styled, { theme } from '../styles/theme';
+import styled from '../styles/theme';
 import { rem } from 'polished';
 
 const Text = styled.div`
