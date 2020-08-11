@@ -3,10 +3,39 @@ import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../app/i18n';
+import Form from './Form';
+import Input from './Input';
+import TextArea from './TextArea';
+import { FormikConfig, FormikHelpers, FormikValues } from 'formik';
+import { Button } from './Button';
+import Select from './Select';
 
 interface ContactTemplateProps extends WithTranslation {}
 
+const encode = (data: any) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
+  const onSubmit = (values: FormikValues) => {
+    fetch('', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(values),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+  };
+
+  const initialValues = {};
+
+  const config: FormikConfig<any> = {
+    initialValues,
+    onSubmit,
+  };
+
   return (
     <Section className={className} id="contact">
       <Grid>
@@ -20,36 +49,21 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <form name="contact" method="POST" data-netlify="true">
+            <Form config={config} formProps={{ method: 'POST', 'data-netlify': true }}>
               <input type="hidden" name="form-name" value="contact" />
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Email: <input type="email" name="email" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Role:{' '}
-                  <select name="role[]" multiple>
-                    <option value="leader">Leader</option>
-                    <option value="follower">Follower</option>
-                  </select>
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message: <textarea name="message"></textarea>
-                </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </form>
+              <Input name="fullName" placeholder={t('contact.fields.name')} />
+              <Input name="email" placeholder={t('contact.fields.email')} />
+              <Select
+                name="topic"
+                options={[
+                  { label: t('contact.fields.options.bug-report'), value: t('contact.fields.options.bug-report') },
+                  { label: t('contact.fields.options.other'), value: t('contact.fields.options.other') },
+                ]}
+                placeholder={t('contact.fields.topic')}
+              />
+              <TextArea name="message" placeholder={t('contact.fields.message')} />
+              <Button>Send</Button>
+            </Form>
           </Col>
         </Row>
       </Grid>
