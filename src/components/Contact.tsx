@@ -20,7 +20,7 @@ const encode = (data: any) => {
 
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues) => {
-    fetch('', {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode(values),
