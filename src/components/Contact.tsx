@@ -20,7 +20,8 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <form name="contact-us" method="POST" data-netlify="true" action="/">
+            <form name="contact" method="POST" data-netlify="true" action="/">
+              <input type="hidden" name="form-name" value="contact" />
               <p>
                 <label>
                   Your Name: <input type="text" name="name" />
