@@ -13,7 +13,7 @@ interface ContactTemplateProps extends WithTranslation {}
 
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
-    console.info(values, formikHelpers);
+    console.info(values, formikHelpers, 'test');
     fetch('/?form-submit', {
       method: 'POST',
     });
