@@ -21,10 +21,10 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
     console.info(values, formikHelpers, 'test');
 
-    fetch('/', {
+    fetch('/contact-us', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...values }),
+      body: encode({ 'form-name': 'contact-us', ...values }),
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
@@ -54,7 +54,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
               config={config}
               formProps={{
                 name: 'contact-us',
-                action: '/?form-sent',
+                action: '/?contact-us',
                 'data-netlify': true,
                 'data-netlify-recaptcha': true,
               }}
