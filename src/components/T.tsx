@@ -1,4 +1,4 @@
-import { withTranslation, WithTranslation } from '../i18n';
+import { withTranslation, WithTranslation } from '../app/i18n';
 import { FC } from 'react';
 
 interface TranslationProps extends WithTranslation {
@@ -9,7 +9,7 @@ interface TranslationProps extends WithTranslation {
 
 const T: FC<TranslationProps> = ({ t, id, tag: Tag = 'span', className }) => {
   const text = t(id);
-  console.info(id, text);
+
   if (text !== id) {
     return <Tag className={className}>{text}</Tag>;
   } else return null;

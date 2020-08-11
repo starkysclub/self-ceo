@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
-import { withTranslation, WithTranslation } from '../i18n';
+import { withTranslation, WithTranslation } from '../app/i18n';
 
 interface FeaturesTemplateProps extends WithTranslation {}
 

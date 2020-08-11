@@ -1,5 +1,5 @@
 import App from 'next/app';
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation } from '../app/i18n';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import main from '../styles/main';

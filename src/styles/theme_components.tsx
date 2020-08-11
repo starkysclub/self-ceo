@@ -9,7 +9,7 @@ import styled, { createGlobalStyle, theme, ThemeProvider } from './theme';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import main from './main';
 import 'react-multi-carousel/lib/styles.css';
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation } from '../app/i18n';
 
 const StyleGuideStyles = createGlobalStyle`
     ${main}

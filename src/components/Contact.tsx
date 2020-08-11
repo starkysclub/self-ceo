@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
-import { withTranslation, WithTranslation } from '../i18n';
-import Form from './Form/Form';
-import Input from './Form/Input';
-import TextArea from './Form/TextArea';
+import { withTranslation, WithTranslation } from '../app/i18n';
+import Form from './Form';
+import Input from './Input';
+import TextArea from './TextArea';
 import { FormikConfig } from 'formik';
 import { Button } from './Button';
 

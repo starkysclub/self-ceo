@@ -1,4 +1,4 @@
-import { withTranslation } from '../i18n';
+import { withTranslation } from '../app/i18n';
 import { NextPage } from 'next';
 import { WithTranslation } from 'next-i18next';
 import Navigation from '../components/Navigation';

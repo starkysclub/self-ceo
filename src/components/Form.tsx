@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Form as FormikForm, Formik, FormikConfig, FormikFormProps } from 'formik';
-import { SC } from '../../styles/theme';
+import { SC } from '../styles/theme';
 
 interface FormTemplateProps {
   config: FormikConfig<any>;

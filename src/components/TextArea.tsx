@@ -1,13 +1,13 @@
 import { Field, FieldAttributes } from 'formik';
-import styled, { SC } from '../../styles/theme';
+import styled, { SC } from '../styles/theme';
 
-interface InputProps extends FieldAttributes<any> {}
+interface TextAreaProps extends FieldAttributes<any> {}
 
-const InputTemplate: SC<InputProps> = (props) => {
-  return <Field component="input" {...props} />;
+const TextAreaTemplate: SC<TextAreaProps> = (props) => {
+  return <Field component="textarea" {...props} />;
 };
 
-const Input = styled(InputTemplate)`
+const TextArea = styled(TextAreaTemplate)`
   display: flex;
   background: #ffffff;
   /* Light Black */
@@ -18,6 +18,7 @@ const Input = styled(InputTemplate)`
   padding: 0.6rem 1rem 0.5rem;
   margin: 1rem 0;
   width: 100%;
+  min-height: 130px;
   font-size: ${({ theme }) => theme.fontSizes.textBase};
   line-height: ${({ theme }) => theme.lineHeights.textBase};
 
@@ -26,4 +27,4 @@ const Input = styled(InputTemplate)`
   }
 `;
 
-export default Input;
+export default TextArea;

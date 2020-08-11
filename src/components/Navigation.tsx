@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
-import { withTranslation, WithTranslation } from '../i18n';
+import { withTranslation, WithTranslation } from '../app/i18n';
 import { rem } from 'polished';
 import { useState } from 'react';
 

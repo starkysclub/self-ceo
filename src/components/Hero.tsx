@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
-import { withTranslation, WithTranslation } from '../i18n';
+import { withTranslation, WithTranslation } from '../app/i18n';
 import { LinkButton } from './Button';
-import Android from '../public/images/android.svg';
-import Apple from '../public/images/apple.svg';
-import useMobileDetect from '../hooks/useMobileDetect';
+import Android from '../../public/images/android.svg';
+import Apple from '../../public/images/apple.svg';
+import useMobileDetect from '../app/hooks/useMobileDetect';
 
 interface HeroTemplateProps extends WithTranslation {}
 
