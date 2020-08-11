@@ -4,7 +4,7 @@ import { SC } from '../styles/theme';
 
 interface FormTemplateProps {
   config: FormikConfig<any>;
-  formProps?: FormikFormProps;
+  formProps?: any;
 }
 
 const FormTemplate: SC<FormTemplateProps> = (props) => {

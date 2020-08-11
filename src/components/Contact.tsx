@@ -6,13 +6,16 @@ import { withTranslation, WithTranslation } from '../app/i18n';
 import Form from './Form';
 import Input from './Input';
 import TextArea from './TextArea';
-import { FormikConfig } from 'formik';
+import { FormikConfig, FormikHelpers, FormikValues } from 'formik';
 import { Button } from './Button';
 
 interface ContactTemplateProps extends WithTranslation {}
 
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
-  const onSubmit = () => console.info('test');
+  const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
+    console.info(values, formikHelpers);
+  };
+
   const initialValues = {};
 
   const config: FormikConfig<any> = {
@@ -33,7 +36,10 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <Form config={config}>
+            <Form
+              config={config}
+              formProps={{ action: '/?form-sent', 'data-netlify': true, 'data-netlify-recaptcha': true }}
+            >
               <Input name="name" placeholder={t('contact.fields.name')} />
               <Input name="email" placeholder={t('contact.fields.email')} />
               <Input name="topic" placeholder={t('contact.fields.topic')} />
