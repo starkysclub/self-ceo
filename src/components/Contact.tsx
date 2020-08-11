@@ -51,20 +51,35 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <Form config={config}>
-              <Input name="fullName" placeholder={t('contact.fields.name')} />
-              <Input name="email" placeholder={t('contact.fields.email')} />
-              <Select
-                name="topic"
-                options={[
-                  { label: t('contact.fields.options.bug-report'), value: t('contact.fields.options.bug-report') },
-                  { label: t('contact.fields.options.other'), value: t('contact.fields.options.other') },
-                ]}
-                placeholder={t('contact.fields.topic')}
-              />
-              <TextArea name="message" placeholder={t('contact.fields.message')} />
-              <Button>Send</Button>
-            </Form>
+            <form name="contact-us" method="POST" data-netlify="true">
+              <p>
+                <label>
+                  Your Name: <input type="text" name="name" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type="email" name="email" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Role:{' '}
+                  <select name="role[]" multiple>
+                    <option value="leader">Leader</option>
+                    <option value="follower">Follower</option>
+                  </select>
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message: <textarea name="message"></textarea>
+                </label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
           </Col>
         </Row>
       </Grid>
