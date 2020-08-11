@@ -12,7 +12,7 @@ We may amend these terms and conditions from time to time. If the changes includ
 
 If you have any questions or concerns regarding the terms or conditions herein, please email us at Self-CEO@starkysclub.com. Do not use the Self-CEO until your questions and concerns have been answered to your satisfaction and you agree to abide by the EULA.
 
-**Notice to consumers:** <span>Depending on the laws of the jurisdiction where you live, you may have certain rights that cannot be waived through this EULA and that are in addition to the terms of this EULA, and certain provisions of this EULA may be unenforceable as to you. To the extent that any term or condition of this EULA is unenforceable, the remainder of the EULA shall remain in full force and effect.</span>
+**Notice to consumers:** Depending on the laws of the jurisdiction where you live, you may have certain rights that cannot be waived through this EULA and that are in addition to the terms of this EULA, and certain provisions of this EULA may be unenforceable as to you. To the extent that any term or condition of this EULA is unenforceable, the remainder of the EULA shall remain in full force and effect.
 
 ### 2\. Age requirement
 

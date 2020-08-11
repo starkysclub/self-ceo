@@ -9,6 +9,7 @@ import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import ReactMarkdown from 'react-markdown';
 import contentEN from '../../public/locales/en/privacy-policy.md';
 import contentDE from '../../public/locales/de/privacy-policy.md';
+import Text from '../components/Text';
 
 interface PrivacyPolicyProps extends WithTranslation {}
 
@@ -29,7 +30,9 @@ const PrivacyPolicy: NextPage<PrivacyPolicyProps> = () => {
           <Grid>
             <Row>
               <Col xs={12}>
-                <ReactMarkdown source={content} />
+                <Text>
+                  <ReactMarkdown source={content} />
+                </Text>
               </Col>
             </Row>
           </Grid>

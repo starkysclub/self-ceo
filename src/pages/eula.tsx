@@ -9,6 +9,7 @@ import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import ReactMarkdown from 'react-markdown';
 import contentEN from '../../public/locales/en/eula.md';
 import contentDE from '../../public/locales/de/eula.md';
+import Text from '../components/Text';
 
 interface EULAProps extends WithTranslation {}
 
@@ -29,7 +30,9 @@ const EULA: NextPage<EULAProps> = () => {
           <Grid>
             <Row>
               <Col xs={12}>
-                <ReactMarkdown source={content} />
+                <Text>
+                  <ReactMarkdown source={content} />
+                </Text>
               </Col>
             </Row>
           </Grid>
