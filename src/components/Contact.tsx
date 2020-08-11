@@ -8,6 +8,7 @@ import Input from './Input';
 import TextArea from './TextArea';
 import { FormikConfig, FormikHelpers, FormikValues } from 'formik';
 import { Button } from './Button';
+import Select from './Select';
 
 interface ContactTemplateProps extends WithTranslation {}
 
@@ -54,7 +55,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
               config={config}
               formProps={{
                 name: 'contact-us',
-                action: '/?contact-us',
+                action: '/contact-us',
                 'data-netlify': true,
                 'data-netlify-recaptcha': true,
               }}
@@ -62,7 +63,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
               <input type="hidden" name="form-name" value="contact-us" />
               <Input name="fullName" placeholder={t('contact.fields.name')} />
               <Input name="email" placeholder={t('contact.fields.email')} />
-              <Input name="topic" placeholder={t('contact.fields.topic')} />
+              <Select name="topic" placeholder={t('contact.fields.topic')} />
               <TextArea name="message" placeholder={t('contact.fields.message')} />
               <Button>Send</Button>
             </Form>
