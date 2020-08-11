@@ -6,7 +6,7 @@ import { withTranslation, WithTranslation } from '../app/i18n';
 import Form from './Form';
 import Input from './Input';
 import TextArea from './TextArea';
-import { FormikConfig, FormikHelpers, FormikValues } from 'formik';
+import { FormikConfig, FormikValues } from 'formik';
 import { Button } from './Button';
 import Select from './Select';
 
