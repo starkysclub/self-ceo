@@ -11,6 +11,12 @@ import { Button } from './Button';
 
 interface ContactTemplateProps extends WithTranslation {}
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
     console.info(values, formikHelpers, 'test');
