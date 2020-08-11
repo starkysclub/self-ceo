@@ -20,7 +20,7 @@ const encode = (data: any) => {
 
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
   const onSubmit = (values: FormikValues, formikHelpers: FormikHelpers<FormikValues>) => {
-    console.info(values, formikHelpers, 'test');
+    console.info(values, formikHelpers, 'tet');
 
     fetch('/contact-us', {
       method: 'POST',
