@@ -27,8 +27,6 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
-
-    e.preventDefault();
   };
 
   const initialValues = {};
