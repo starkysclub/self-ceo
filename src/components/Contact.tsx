@@ -3,12 +3,7 @@ import Section from './Section';
 import { Grid, Row, Col } from 'react-styled-flexboxgrid';
 import { SC } from '../styles/theme';
 import { withTranslation, WithTranslation } from '../app/i18n';
-import Form from './Form';
-import Input from './Input';
-import TextArea from './TextArea';
-import { FormikConfig, FormikValues } from 'formik';
-import { Button } from './Button';
-import Select from './Select';
+import { useState } from 'react';
 
 interface ContactTemplateProps extends WithTranslation {}
 
@@ -19,22 +14,21 @@ const encode = (data: any) => {
 };
 
 const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
-  const onSubmit = (values: FormikValues) => {
-    fetch('/contact', {
+  const [state, setState] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e: any) => {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode(values),
+      body: encode({ 'form-name': 'contact', ...state }),
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
+
+    e.preventDefault();
   };
 
-  const initialValues = {};
-
-  const config: FormikConfig<any> = {
-    initialValues,
-    onSubmit,
-  };
+  const handleChange = (e: any) => setState({ [e.target.name]: e.target.value } as any);
 
   return (
     <Section className={className} id="contact">
@@ -49,21 +43,26 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <Form config={config} formProps={{ method: 'POST', 'data-netlify': true, action: 'contact' }}>
-              <input type="hidden" name="form-name" value="contact" />
-              <Input name="fullName" placeholder={t('contact.fields.name')} />
-              <Input name="email" placeholder={t('contact.fields.email')} />
-              <Select
-                name="topic"
-                options={[
-                  { label: t('contact.fields.options.bug-report'), value: t('contact.fields.options.bug-report') },
-                  { label: t('contact.fields.options.other'), value: t('contact.fields.options.other') },
-                ]}
-                placeholder={t('contact.fields.topic')}
-              />
-              <TextArea name="message" placeholder={t('contact.fields.message')} />
-              <Button>Send</Button>
-            </Form>
+            <form onSubmit={handleSubmit}>
+              <p>
+                <label>
+                  Your Name: <input type="text" name="name" value={state.name} onChange={handleChange} />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type="email" name="email" value={state.email} onChange={handleChange} />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message: <textarea name="message" value={state.message} onChange={handleChange} />
+                </label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
           </Col>
         </Row>
       </Grid>
