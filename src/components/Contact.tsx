@@ -49,7 +49,7 @@ const ContactTemplate: SC<ContactTemplateProps> = ({ className, t }) => {
             <div className="image" />
           </Col>
           <Col xs={12} md={6}>
-            <Form config={config} formProps={{ method: 'POST', 'data-netlify': true }}>
+            <Form config={config} formProps={{ method: 'POST', 'data-netlify': true, action: 'contact' }}>
               <input type="hidden" name="form-name" value="contact" />
               <Input name="fullName" placeholder={t('contact.fields.name')} />
               <Input name="email" placeholder={t('contact.fields.email')} />
