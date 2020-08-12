@@ -24,6 +24,7 @@ const TextArea = styled(TextAreaTemplate)`
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 0 1px ${({ theme }) => theme.colors.primary};
   }
 `;
 

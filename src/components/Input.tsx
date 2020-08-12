@@ -23,6 +23,7 @@ const Input = styled(InputTemplate)`
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: 0 0 1px ${({ theme }) => theme.colors.primary};
   }
 `;
 
